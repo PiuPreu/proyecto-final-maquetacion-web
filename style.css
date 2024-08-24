@@ -1,0 +1,267 @@
+h1 {
+    /* font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal; */
+}
+
+/* NORMALIZACION:  */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* esto mantiene el ancho y el alto a pesar del padding y border  */
+    font-family: "Roboto Mono", monospace;
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    background-color: black; /* TO DO: BORRAR CUANDO TENGAMOS EL FONDO FINAL */
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100; /* esto hace que el header se muestre arriba */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 3%;
+    background-color: transparent;
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.navlist {
+    display: flex;
+}
+
+.navlist a {
+    margin-left: 60px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all .5s ease;
+}
+
+.navlist a:hover {
+    border-bottom: 2px solid white;
+
+}
+
+#menu-icon {
+    display: none;
+
+}
+
+#menu-icon {
+    font-size: 35px;
+    z-index: 101; /* para que no este sobre el header */
+    cursor: pointer ; /* para que aparezca la manto cuando ponemos el mouse encima */
+}
+
+#menu-toggle { 
+    display: none;
+}
+
+.menu-icon-action {
+    display: none; /* para que no se puede hacer click */
+}
+
+.hero {
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg, green 0%, #43b343 25%, #5a785a 75%) ;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+
+}
+
+section {
+    padding: 0 8%;
+}
+
+.hero-text h5 {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    
+}
+.hero-text h1 {
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+.hero-text h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+   
+
+}
+.hero-img {
+    width: 250px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all .5s linear;
+    
+}
+
+.hero-img img:hover {
+    width: 400px;
+    opacity: 0.8;
+}
+.hero-text a{
+    display: inline-block;
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-transform: uppercase;
+    transition: all .5s ease;
+}
+
+.hero-text a:hover {
+    background-color: transparent;
+    border: 1px solid white;
+    transform: translateX(8px);
+}
+
+.hero-text a.videos {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.hero-text a.videos i{
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.icons{
+    position: absolute;
+    top: 50vh;
+    padding: 0 3%;
+    transform: translateY(-50%);
+}
+
+.icons i{
+    display: block;
+    margin: 26px 0;
+    font-size: 24px;
+    transition: all .5s ease;
+}
+
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+.scrolldown {
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+.scrolldown i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #5a785a;
+    border-radius: 30px;
+    transition: all .5s ease;
+}
+
+.scrolldown i:hover {
+    transform: translateY(-5px);
+}
+
+@media (max-width: 992px) {
+ section { 
+    padding: 0 3%;
+    transition: .2s;
+ }
+ .hero-text{
+    padding-top: 0;
+ }
+ .hero-text p{
+    font-size: 70%;
+ }
+ .hero-img{
+    text-align: center;
+ }
+ .hero-img img {
+    width: 80%;
+    margin: 10% 0  10%;
+ }
+ .scrolldown{
+    display: none;
+ }
+
+ .icons {
+    display: none;
+ }
+}
+@media (max-width: 768px) {
+    .menu-icon-action{
+        display: block
+    }
+    #menu-icon{
+        display: block;
+    }
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+    .hero-img img {
+        margin: 0;
+    }
+    .hero {
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #263526d6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all .7s ease;
+
+    }
+
+    .navlist a{
+        display: block;
+        margin-left: 7px 0;
+
+    }
+
+    #menu-toggle:checked + label.menu-icon-action + ul {
+        right: 0;
+    }
+}
